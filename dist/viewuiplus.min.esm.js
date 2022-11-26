@@ -6167,7 +6167,7 @@ const _sfc_main$2c = {
     if (this.showSlot) {
       slots.push(h("span", {
         ref: "slot"
-      }), this.$slots.default());
+      }, this.$slots.default()));
     }
     return h(tag, __spreadValues({
       class: this.classes,
@@ -26202,7 +26202,7 @@ function _sfc_render$O(_ctx, _cache, $props, $setup, $data, $options) {
 var Tabs = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["render", _sfc_render$O]]);
 const _sfc_main$W = {
   name: "Notification",
-  components: { Dropdown, DropdownMenu, Badge, Tabs },
+  components: { Dropdown, DropdownMenu, Badge, Tabs, Icon },
   emits: ["on-visible-change", "on-item-click", "on-clear", "on-load-more", "on-tab-change"],
   provide() {
     return {
@@ -38361,8 +38361,8 @@ var style = {
     }
   }
 };
-const name = "view-ui-plus";
-const version$1 = "1.3.1";
+const name = "@chowa/view-ui-plus";
+const version$1 = "1.1.0";
 const title = "ViewUIPlus";
 const description = "A high quality UI components Library with Vue.js 3";
 const homepage = "http://www.iviewui.com";
@@ -38390,8 +38390,7 @@ const scripts = {
   "build:style": "gulp --gulpfile build/build-style.js",
   "build:prod": "vite build",
   "build:lang": "vite build --config build/vite.lang.config.js",
-  lint: "vue-cli-service lint --fix",
-  prepare: "npm run build"
+  lint: "vue-cli-service lint --fix"
 };
 const repository = {
   type: "git",

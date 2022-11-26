@@ -26,12 +26,13 @@
     import DropdownMenu from '../dropdown/dropdown-menu.vue';
     import Badge from '../badge/badge.vue';
     import Tabs from '../tabs/tabs.vue';
+    import Icon from '../icon/icon.vue'
 
     import { oneOf } from '../../utils/assist.js';
 
     export default {
         name: 'Notification',
-        components: { Dropdown, DropdownMenu, Badge, Tabs },
+        components: { Dropdown, DropdownMenu, Badge, Tabs, Icon },
         emits: ['on-visible-change', 'on-item-click', 'on-clear', 'on-load-more', 'on-tab-change'],
         provide () {
             return {

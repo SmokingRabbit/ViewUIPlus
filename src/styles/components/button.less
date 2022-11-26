@@ -262,5 +262,66 @@ body[theme-mode="dark"] {
         &-info {
             .dark-btn-color(@info-color);
         }
+
+        &-ghost{
+            color: @dark-btn-default-color;
+            background: transparent;
+            &:hover{
+                background: transparent;
+            }
+        }
+        &-ghost.@{btn-prefix-cls}-dashed, &-ghost.@{btn-prefix-cls}-default{
+            color: @dark-btn-default-color;
+            border-color: @dark-btn-default-border;
+            &:hover{
+                color: tint(@primary-color, 20%);
+                border-color: tint(@primary-color, 20%);
+            }
+        }
+        &-ghost.@{btn-prefix-cls}-primary{
+            color: @primary-color;
+            &:hover{
+                color: tint(@primary-color, 20%);
+                background: fade(tint(@primary-color, 95%), 50%);
+            }
+        }
+        &-ghost.@{btn-prefix-cls}-info{
+            color: @info-color;
+            &:hover{
+                color: tint(@info-color, 20%);
+                background: fade(tint(@info-color, 95%), 50%);
+            }
+        }
+        &-ghost.@{btn-prefix-cls}-success{
+            color: @success-color;
+            &:hover{
+                color: tint(@success-color, 20%);
+                background: fade(tint(@success-color, 95%), 50%);
+            }
+        }
+        &-ghost.@{btn-prefix-cls}-warning{
+            color: @warning-color;
+            &:hover{
+                color: tint(@warning-color, 20%);
+                background: fade(tint(@warning-color, 95%), 50%);
+            }
+        }
+        &-ghost.@{btn-prefix-cls}-error{
+            color: @error-color;
+            &:hover{
+                color: tint(@error-color, 20%);
+                background: fade(tint(@error-color, 95%), 50%);
+            }
+        }
+
+        &-ghost.@{btn-prefix-cls}-default[disabled], &-ghost.@{btn-prefix-cls}-dashed[disabled], &-ghost.@{btn-prefix-cls}-primary[disabled], &-ghost.@{btn-prefix-cls}-info[disabled], &-ghost.@{btn-prefix-cls}-success[disabled], &-ghost.@{btn-prefix-cls}-warning[disabled], &-ghost.@{btn-prefix-cls}-error[disabled]{
+            background: transparent;
+            color: fade(#000, 25%);
+            border-color: @btn-disable-border;
+        }
+        &-ghost.@{btn-prefix-cls}-text[disabled]{
+            background: transparent;
+            color: fade(#000, 25%);
+        }
     }
 }

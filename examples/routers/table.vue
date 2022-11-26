@@ -17,6 +17,7 @@
             :columns="columns0"
             :data="data0"
             row-key="id"
+            loading
             :load-data="loadData"
         >
             <template #age="{ row }">

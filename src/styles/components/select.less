@@ -383,13 +383,13 @@ body[theme-mode="dark"] {
             }
         }
 
-        &-single &-selection{
+        &-single .@{select-prefix-cls}-selection{
             .@{select-prefix-cls}-placeholder{
                 color: @dark-input-placeholder-color;
             }
         }
 
-        &-multiple &-selection{
+        &-multiple .@{select-prefix-cls}-selection{
             .@{select-prefix-cls}-placeholder{
                 color: @dark-input-placeholder-color;
             }
@@ -424,7 +424,7 @@ body[theme-mode="dark"] {
             background: @dark-background-color-select-hover;
         }
 
-        &-selected&-focus {
+        &-selected.@{select-prefix-cls}-focus {
             color: shade(@selected-color, 10%);
             background: #fff;
         }
