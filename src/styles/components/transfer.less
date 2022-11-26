@@ -140,3 +140,33 @@
     }
 }
 .select-item(@transfer-prefix-cls, @transfer-item-prefix-cls);
+
+body[theme-mode="dark"] {
+    .@{transfer-prefix-cls} {
+        &-list{
+            &-header {
+                background: @dark-head-bg;
+                color: @dark-text-color;
+                border: 1px solid @dark-border-color-base;
+                border-bottom: 1px solid @dark-border-color-split;
+            }
+
+            &-body{
+                border: 1px solid @dark-border-color-base;
+            }
+
+            &-content{
+                &-not-found{
+                    display: none;
+                    text-align: center;
+                    color: @dark-btn-disable-color;
+                }
+            }
+
+            &-footer{
+                border: 1px solid @dark-border-color-base;
+            }
+        }
+    }
+    .dark-select-item(@transfer-prefix-cls, @transfer-item-prefix-cls);
+}

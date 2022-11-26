@@ -176,3 +176,34 @@
         }
     }
 }
+
+body[theme-mode="dark"] {
+    .dark-select-item(@cascader-prefix-cls, @cascader-item-prefix-cls);
+
+    .@{cascader-prefix-cls} {
+        &-menu{
+            border-right: 1px solid @dark-border-color-split;
+
+            &-item{
+                &-active{
+                    background-color: @dark-background-color-select-hover;
+                    color: @primary-color;
+                }
+            }
+        }
+    }
+
+    .@{cascader-prefix-cls}-transfer{
+        .dark-select-item(@cascader-prefix-cls, @cascader-item-prefix-cls);
+        .@{cascader-prefix-cls} {
+            &-menu{
+                &-item{
+                    &-active{
+                        background-color: @dark-background-color-select-hover;
+                        color: @primary-color;
+                    }
+                }
+            }
+        }
+    }
+}

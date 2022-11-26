@@ -111,3 +111,39 @@
         flex: auto;
     }
 }
+
+body[theme-mode="dark"] {
+    .@{layout-prefix-cls} {
+        background: @dark-layout-body-background;
+
+        &-header {
+            background: @dark-layout-header-background;
+        }
+
+        &-sider {
+            background: @dark-layout-sider-background;
+
+
+            &-trigger {
+                color: @dark-layout-trigger-color;
+                background: @dark-layout-sider-background;
+            }
+
+            &-zero-width {
+                &-trigger {
+                    background: @dark-layout-sider-background;
+                    color: @dark-white;
+
+                    &:hover {
+                      background: tint(@dark-layout-sider-background, 10%);
+                    }
+                }
+            }
+        }
+
+        &-footer {
+            background: @dark-layout-footer-background;
+            color: @dark-text-color;
+        }
+    }
+}

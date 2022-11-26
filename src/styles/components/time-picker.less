@@ -169,3 +169,48 @@
         }
     }
 }
+
+body[theme-mode="dark"] {
+    .@{time-picker-prefix-cls} {
+        &-cells{
+            &-list{
+                border-left: 1px solid @dark-border-color-split;
+            }
+
+            &-cell{
+                &:hover{
+                    background: @dark-background-color-select-hover;
+                }
+                &-disabled {
+                    color: @dark-btn-disable-color;
+
+                    &:hover {
+                        color: @btn-disable-color;
+                        background-color: @dark-white;
+                    }
+                }
+                &-selected ,&-selected:hover{
+                    color: @primary-color;
+                    background: @dark-background-color-select-hover;
+                }
+                &-focused{
+                    background-color: tint(@primary-color, 80%);
+                }
+            }
+        }
+
+        &-header{
+            border-bottom: 1px solid @dark-border-color-split;
+        }
+
+        &-with-range{
+            .@{picker-prefix-cls}-panel{
+                &-content{
+                    &:after{
+                        background: @dark-border-color-split;
+                    }
+                }
+            }
+        }
+    }
+}

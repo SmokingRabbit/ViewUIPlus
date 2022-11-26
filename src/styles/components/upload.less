@@ -58,7 +58,7 @@
      &-select {
         display: inline-block;
     }
-    
+
     &-drag{
         background: #fff;
         border: 1px dashed @border-color-base;
@@ -75,5 +75,51 @@
     }
     &-dragOver{
         border: 2px dashed @primary-color;
+    }
+}
+
+body[theme-mode="dark"] {
+    .@{upload-prefix-cls} {
+        &-list{
+            &-file{
+                color: @dark-text-color;
+
+                & > span{
+                    i{
+                        color: @dark-text-color;
+                    }
+                }
+
+                &:hover{
+                    background: @dark-input-disabled-bg;
+                    & > span{
+                        color: @primary-color;
+                        i{
+                            color: @dark-text-color;
+                        }
+                    }
+                }
+            }
+            &-remove{
+                color: @dark-legend-color;
+
+                &:hover{
+                    color: #f5f5f5;
+                }
+            }
+        }
+
+        &-drag{
+            background: @dark-component-background;
+            border: 1px dashed @dark-border-color-base;
+
+            &:hover{
+                border: 1px dashed @primary-color;
+            }
+        }
+
+        &-dragOver{
+            border: 2px dashed @primary-color;
+        }
     }
 }

@@ -154,3 +154,56 @@
         }
     }
 }
+
+body[theme-mode="dark"] {
+    .@{poptip-prefix-cls} {
+        &-title {
+            &:after{
+                background-color: @dark-border-color-split;
+            }
+
+            &-inner{
+                color: @dark-title-color;
+            }
+        }
+
+        &-body{
+            &-content{
+                &-inner{
+                    color: @dark-text-color;
+                }
+            }
+        }
+
+        &-inner{
+            background-color: @dark-popper-background;
+            box-shadow: @dark-shadow-base;
+        }
+
+        &-popper{
+            .dark-popper(@poptip-arrow, @poptip-arrow-width, @poptip-distance, @dark-popper-background);
+
+            &[x-placement^="top"] .@{poptip-arrow}:after {
+                border-top-color: @dark-popper-background;
+            }
+
+            &[x-placement^="right"] .@{poptip-arrow}:after {
+                border-right-color: @dark-popper-background;
+            }
+
+            &[x-placement^="bottom"] .@{poptip-arrow}:after {
+                border-bottom-color: @dark-popper-background;
+            }
+
+            &[x-placement^="left"] .@{poptip-arrow}:after {
+                border-left-color: @dark-popper-background;
+            }
+        }
+
+        &-arrow{
+            &, &:after{
+                border-color: transparent;
+            }
+        }
+    }
+}

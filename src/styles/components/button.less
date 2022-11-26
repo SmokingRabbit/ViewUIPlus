@@ -200,3 +200,67 @@ a.@{btn-prefix-cls} {
         line-height: @btn-height-small - 2px;
     }
 }
+
+body[theme-mode="dark"] {
+    .@{btn-prefix-cls} {
+        .dark-btn-default;
+
+        &-primary {
+            .dark-btn-primary;
+
+            .@{btn-prefix-cls}-group:not(.@{btn-prefix-cls}-group-vertical) &:first-child {
+                &:not(:last-child) {
+                    &[disabled] {
+                        border-right-color: @dark-btn-default-border;
+                    }
+                }
+            }
+
+            .@{btn-prefix-cls}-group:not(.@{btn-prefix-cls}-group-vertical) &:last-child:not(:first-child),
+            .@{btn-prefix-cls}-group:not(.@{btn-prefix-cls}-group-vertical) & + .@{btn-prefix-cls} {
+                &[disabled] {
+                    border-left-color: @dark-btn-default-border;
+                }
+            }
+
+            .@{btn-prefix-cls}-group-vertical &:first-child {
+                &:not(:last-child) {
+                    &[disabled] {
+                        border-top-color: @dark-btn-default-border;
+                    }
+                }
+            }
+
+            .@{btn-prefix-cls}-group-vertical &:last-child:not(:first-child),
+            .@{btn-prefix-cls}-group-vertical & + .@{btn-prefix-cls} {
+                &[disabled] {
+                    border-bottom-color: @dark-btn-default-border;
+                }
+            }
+        }
+
+        &-dashed{
+            .dark-btn-dashed;
+        }
+
+        &-text{
+            .dark-btn-text;
+        }
+
+        &-success {
+            .dark-btn-color(@success-color);
+        }
+
+        &-warning {
+            .dark-btn-color(@warning-color);
+        }
+
+        &-error {
+            .dark-btn-color(@error-color);
+        }
+
+        &-info {
+            .dark-btn-color(@info-color);
+        }
+    }
+}

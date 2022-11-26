@@ -377,3 +377,117 @@ span.@{radio-prefix-cls} + * {
     }
 }
 
+body[theme-mode="dark"] {
+    .@{radio-prefix-cls} {
+        &-inner {
+            background-color: @dark-component-background;
+            border: 1px solid @dark-border-color-base;
+        }
+
+        &-border{
+            border: 1px solid @dark-border-color-base;
+        }
+    }
+
+    .@{radio-prefix-cls}-wrapper-checked.@{radio-prefix-cls}-border{
+        border-color: @primary-color;
+    }
+    .@{radio-prefix-cls}-wrapper-disabled.@{radio-prefix-cls}-border{
+        border-color: @btn-disable-border;
+    }
+
+    // 选中状态 - Selected state
+    .@{radio-prefix-cls}-checked {
+        .@{radio-inner-prefix-cls} {
+            border-color: @primary-color;
+        }
+        &:hover {
+            .@{radio-inner-prefix-cls} {
+                border-color: @primary-color;
+            }
+        }
+    }
+
+    .@{radio-prefix-cls}-disabled {
+        &:hover {
+            .@{radio-inner-prefix-cls} {
+                border-color: @dark-border-color-base;
+            }
+        }
+        .@{radio-inner-prefix-cls} {
+            border-color: @dark-border-color-base;
+            background-color: @dark-input-disabled-bg;
+
+            &:after {
+                background-color: #cccccc;
+            }
+        }
+
+        .@{radio-prefix-cls}-disabled + span {
+            color: #ccc;
+        }
+    }
+
+    // 按钮样式 - Button style
+    .@{radio-group-button-prefix-cls} {
+        .@{radio-prefix-cls}-wrapper {
+            color: @dark-btn-default-color;
+            border: 1px solid @dark-border-color-base;
+            background: @dark-component-background;
+            border-left: 0;
+
+            &:before, &:after {
+                background: @dark-border-color-base;
+            }
+
+            &:first-child {
+                border-left: 1px solid @dark-border-color-base;
+            }
+
+            &-checked:first-child {
+                border-left: 1px solid @primary-color;
+            }
+
+            &-checked {
+                background: @dark-component-background;
+                border-color: @primary-color;
+                color: @primary-color;
+            }
+
+            &-disabled {
+                border-color: @dark-border-color-base;
+                background-color: @dark-input-disabled-bg;
+                color: #ccc;
+
+                &:first-child,
+                &:hover {
+                    border-color: @dark-border-color-base;
+                    background-color: @dark-input-disabled-bg;
+                    color: #ccc;
+                }
+                &:first-child {
+                    border-left-color: @dark-border-color-base;
+                }
+            }
+
+            &-disabled.@{radio-prefix-cls}-wrapper-checked {
+                color: #f9f9f9;
+                background-color: @dark-input-disabled-bg;
+                border-color: @dark-border-color-base;
+                box-shadow: none!important;
+            }
+        }
+
+        &-solid .@{radio-prefix-cls}-wrapper {
+            &-checked:not(.@{radio-prefix-cls}-wrapper-disabled){
+                background: @primary-color;
+                color: #f9f9f9;
+
+                &:hover{
+                    background: tint(@primary-color, 20%);
+                    color: #f9f9f9;
+                }
+            }
+        }
+    }
+}

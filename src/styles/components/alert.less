@@ -32,7 +32,7 @@
 
     &-success {
         border: @border-width-base @border-style-base ~`colorPalette("@{success-color}", 3)`;
-        //background-color: tint(@success-color, 90%);
+        // background-color: tint(@success-color, 90%);
         background-color: ~`colorPalette("@{success-color}", 1)`;
         .@{alert-prefix-cls}-icon {
             color: @success-color;
@@ -41,7 +41,7 @@
 
     &-info {
         border: @border-width-base @border-style-base ~`colorPalette("@{primary-color}", 3)`;
-        //background-color: tint(@primary-color, 90%);
+        // background-color: tint(@primary-color, 90%);
         background-color: ~`colorPalette("@{primary-color}", 1)`;
         .@{alert-prefix-cls}-icon {
             color: @primary-color;
@@ -50,7 +50,7 @@
 
     &-warning {
         border: @border-width-base @border-style-base ~`colorPalette("@{warning-color}", 3)`;
-        //background-color: tint(@warning-color, 90%);
+        // background-color: tint(@warning-color, 90%);
         background-color: ~`colorPalette("@{warning-color}", 1)`;
         .@{alert-prefix-cls}-icon {
             color: @warning-color;
@@ -59,7 +59,7 @@
 
     &-error {
         border: @border-width-base @border-style-base ~`colorPalette("@{error-color}", 3)`;
-        //background-color: tint(@error-color, 90%);
+        // background-color: tint(@error-color, 90%);
         background-color: ~`colorPalette("@{error-color}", 1)`;
         .@{alert-prefix-cls}-icon {
             color: @error-color;
@@ -103,5 +103,39 @@
 
     &-with-banner{
         border-radius: 0;
+    }
+}
+
+body[theme-mode="dark"] {
+    .@{alert-prefix-cls}{
+        color: @dark-text-color;
+
+        &-success {
+            background-color: fade(@success-color, 20%);
+        }
+
+        &-info {
+            background-color: fade(@primary-color, 20%);
+        }
+
+        &-warning {
+            background-color: fade(@warning-color, 20%);
+        }
+
+        &-error {
+            background-color: fade(@error-color, 20%);
+        }
+
+        &-desc {
+            color: @dark-text-color;
+        }
+
+        &-with-desc {
+            color: @dark-text-color;
+        }
+
+        &-message {
+            color: @dark-title-color;
+        }
     }
 }

@@ -26,3 +26,21 @@
         font-size: @font-size-base;
     }
 }
+
+body[theme-mode="dark"] {
+    .ivu-global-footer{
+        &-links{
+            a {
+                color: @dark-subsidiary-color;
+
+                &:hover {
+                    color: @dark-text-color;
+                }
+            }
+        }
+
+        &-copyright{
+            color: @dark-subsidiary-color;
+        }
+    }
+}

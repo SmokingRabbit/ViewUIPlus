@@ -323,3 +323,135 @@
         }
     }
 }
+
+body[theme-mode="dark"] {
+    .@{date-picker-prefix-cls} {
+        &-cells{
+            &-header span{
+                color: @dark-btn-disable-color;
+            }
+            &-cell:hover{
+                em{
+                    background: @dark-date-picker-cell-hover-bg;
+                }
+            }
+            &-focused{
+                em{
+                    box-shadow: 0 0 0 1px @primary-color inset;
+                }
+            }
+
+            &-cell{
+                &-prev-month,&-next-month{
+                    em{
+                        color: @dark-btn-disable-color;
+                    }
+                    &:hover{
+                        em{
+                            background: transparent;
+                        }
+                    }
+                }
+                span&-week-label,span&-week-label:hover,span&-disabled,span&-disabled:hover{
+                    color: @dark-btn-disable-color;
+                    em{
+                        color: inherit;
+                        background: inherit;
+                    }
+                }
+                span&-disabled,span&-disabled:hover{
+                    background: @dark-btn-disable-bg;
+                }
+                &-today{
+                    em {
+                        &:after{
+                            background: @primary-color;
+                        }
+                    }
+                }
+                &-range{
+                    &:before{
+                        background: @dark-date-picker-cell-hover-bg;
+                    }
+                }
+                &-selected,&-selected:hover
+                {
+                    em{
+                        background: @primary-color;
+                        color: @dark-white;
+                    }
+                }
+                span&-disabled&-selected{
+                    em {
+                        background: @dark-btn-disable-color;
+                        color: @dark-btn-disable-bg;
+                    }
+                }
+                &-today&-selected
+                {
+                    em{
+                        &:after{
+                            background: @dark-white;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-cells-year,&-cells-month{
+            .@{date-picker-prefix-cls}-cells-cell-focused{
+                background-color: fade(@primary-color, 60%);
+                color: @dark-title-color;
+            }
+
+        }
+
+        &-header{
+            border-bottom: 1px solid @dark-border-color-split;
+            &-label{
+                &:hover{
+                    color: @primary-color;
+                }
+            }
+        }
+
+        &-btn-pulse{
+            background-color: fade(@primary-color, 60%) !important;
+        }
+    }
+
+    .@{picker-prefix-cls} {
+        &-panel{
+            &-icon-btn{
+                &:hover{
+                    color: @primary-color;
+                }
+            }
+
+            &-shortcut{
+                &:hover{
+                    background: @dark-border-color-split;
+                }
+            }
+
+            &-sidebar {
+                background: @dark-table-thead-bg;
+                border-right: 1px solid @dark-border-color-split;
+            }
+        }
+
+        &-confirm{
+            border-top: 1px solid @dark-border-color-split;
+
+            & > span{
+                color: @link-color;
+                &:hover{
+                    color: @link-hover-color;
+                }
+                &:active{
+                    color: @link-active-color;
+                }
+            }
+        }
+    }
+}

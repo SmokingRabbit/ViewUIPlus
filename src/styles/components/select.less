@@ -360,3 +360,89 @@
         }
     }
 }
+
+body[theme-mode="dark"] {
+    .@{select-prefix-cls} {
+        color: @dark-text-color;
+
+        &-selection {
+            background-color: @dark-component-background;
+            border: 1px solid @dark-border-color-base;
+        }
+
+
+        &-disabled {
+            .@{select-prefix-cls}-selection {
+                .@{select-prefix-cls}-arrow {
+                    color: @dark-slider-disabled-color;
+                }
+
+                &:hover {
+                    border-color: @dark-border-color-base;
+                }
+            }
+        }
+
+        &-single &-selection{
+            .@{select-prefix-cls}-placeholder{
+                color: @dark-input-placeholder-color;
+            }
+        }
+
+        &-multiple &-selection{
+            .@{select-prefix-cls}-placeholder{
+                color: @dark-input-placeholder-color;
+            }
+        }
+
+        // input
+        &-input{
+            color: @dark-input-color;
+
+            &[disabled]{
+                color: #ccc;
+                -webkit-text-fill-color: #ccc;  // #5249
+            }
+        }
+
+        &-not-found{
+            color: @dark-btn-disable-color;
+        }
+        &-loading{
+            color: @dark-btn-disable-color;
+        }
+    }
+
+    .dark-select-item(@select-prefix-cls, @select-item-prefix-cls);
+
+    .@{select-prefix-cls}-multiple .@{select-item-prefix-cls} {
+        &-selected{
+            color: @selected-color;
+            background: @dark-component-background;
+        }
+        &-focus,&-selected:hover{
+            background: @dark-background-color-select-hover;
+        }
+
+        &-selected&-focus {
+            color: shade(@selected-color, 10%);
+            background: #fff;
+        }
+
+        &-selected.ivu-select-item-disabled{
+            color: @dark-btn-disable-color;
+            &:after{
+                color: @dark-btn-disable-color;
+            }
+            &:hover{
+                background-color: @dark-component-background;
+            }
+        }
+    }
+
+    .@{select-group-prefix-cls} {
+        &-title {
+            color: @dark-legend-color;
+        }
+    }
+}

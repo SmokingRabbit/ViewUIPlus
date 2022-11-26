@@ -65,3 +65,48 @@
         padding-top: 24px;
     }
 }
+
+body[theme-mode="dark"] {
+    .ivu-calendar{
+        &-header{
+            border-bottom: 1px solid @dark-border-color-split;
+
+            &-title{
+                color: @dark-title-color;
+            }
+        }
+
+        &-table{
+            td{
+                border-bottom: 1px solid @dark-border-color-split;
+                border-right: 1px solid @dark-border-color-split;
+            }
+            tr:first-child td {
+                border-top: 1px solid @dark-border-color-split;
+            }
+
+            tr td:first-child {
+                border-left: 1px solid @dark-border-color-split;
+            }
+
+            &-day{
+                transition: dark-background-color @transition-time @ease-in-out;
+
+                &:hover{
+                    background-color: fade(@primary-color, 40%);
+                }
+                &-other{
+                    .ivu-calendar-table-day-title{
+                        color: @dark-btn-disable-color;
+                    }
+                }
+                &-current{
+                    .ivu-calendar-table-day-title{
+                        color: @primary-color;
+                    }
+                    background-color: fade(@primary-color, 40%);
+                }
+            }
+        }
+    }
+}

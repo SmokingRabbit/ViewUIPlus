@@ -9,6 +9,8 @@
         <Time :time="time3" :interval="1" />
         <br>
         <Time :time="time4" />
+
+        <TimePicker confirm/>
     </div>
 </template>
 <script>

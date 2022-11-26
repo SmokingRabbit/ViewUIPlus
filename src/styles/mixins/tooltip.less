@@ -83,3 +83,20 @@
         right: 16px;
     }
 }
+
+.dark-popper(@arrow, @arrow-width, @arrow-distance, @dark-bg){
+    &[x-placement^="top"] .@{arrow} {
+        border-top-color: @dark-bg;
+    }
+
+    &[x-placement^="right"] .@{arrow} {
+        border-right-color: @dark-bg;
+    }
+
+    &[x-placement^="left"] .@{arrow} {
+        border-left-color: @dark-bg;
+    }
+    &[x-placement^="bottom"] .@{arrow} {
+        border-bottom-color: @dark-bg;
+    }
+}

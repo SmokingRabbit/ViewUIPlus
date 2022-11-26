@@ -539,3 +539,164 @@
         padding: 0;
     }
 }
+
+
+body[theme-mode="dark"] {
+    .@{table-prefix-cls} {
+        &-wrapper{
+            &-with-border{
+                border: 1px solid @dark-border-color-base;
+            }
+        }
+        color: @dark-text-color;
+        background-color: @dark-component-background;
+
+        &-summary{
+            border-top: 1px solid @dark-border-color-split;
+            tr td{
+                background-color: @dark-table-thead-bg;
+            }
+        }
+
+        &-resize-line{
+            border-right: 1px dashed @dark-border-color-split;
+        }
+
+        &:before{
+            background-color: @dark-border-color-base;
+        }
+
+        &-border:after{
+            background-color: @dark-border-color-base;
+        }
+
+        &-title, &-footer{
+            border-bottom: 1px solid @dark-border-color-split;
+        }
+
+        &-with-fixed-top&-with-footer{
+            .@{table-prefix-cls}-footer{
+                border-top: 1px solid @dark-border-color-base;
+            }
+        }
+
+        th, td
+        {
+            border-bottom: 1px solid @dark-border-color-split;
+        }
+
+        th {
+            background-color: @dark-table-thead-bg;
+        }
+        td{
+            background-color: @dark-component-background;
+        }
+
+        &-border{
+            th,td{
+                border-right: 1px solid @dark-border-color-split;
+            }
+        }
+        &-cell{
+            &-tree{
+                border: 1px solid @dark-border-color-base;
+                background-color: @dark-component-background;
+
+                &:hover {
+                    color: @primary-color;
+                    border-color: @primary-color;
+                }
+                &-empty:hover{
+                    color: transparent;
+                    border-color: transparent;
+                }
+
+                &-loading{
+                    background-color: transparent;
+                    border-color: transparent;
+
+                    &:hover{
+                        border-color: transparent;
+                    }
+                }
+            }
+        }
+        td&-expanded-cell{
+            padding: 20px 50px;
+            background: @dark-table-thead-bg;
+        }
+
+        &-stripe .@{table-prefix-cls}-body,
+        &-stripe .@{table-prefix-cls}-fixed-body
+        {
+            tr:nth-child(2n) {
+                td{
+                    background-color: @dark-table-td-stripe-bg;
+                }
+            }
+            // #1380
+            tr.@{table-prefix-cls}-row-hover{
+                td{
+                    background-color: @dark-table-td-hover-bg;
+                }
+            }
+        }
+
+        tr&-row-hover{
+            td{
+                background-color: @dark-table-td-hover-bg;
+            }
+        }
+
+        &-row-highlight,
+        tr.@{table-prefix-cls}-row-highlight.@{table-prefix-cls}-row-hover,
+        &-stripe .@{table-prefix-cls}-body tr.@{table-prefix-cls}-row-highlight:nth-child(2n),
+        &-stripe .@{table-prefix-cls}-fixed-body tr.@{table-prefix-cls}-row-highlight:nth-child(2n)
+        {
+            td{
+                background-color: @dark-table-td-highlight-bg;
+            }
+        }
+
+        &-fixed, &-fixed-right{
+            &::before {
+                background-color: @dark-border-color-base;
+            }
+        }
+        &-fixed-right{
+            top: 0;
+            left: auto;
+            right: 0;
+        }
+        &-fixed.@{table-prefix-cls}-fixed-shadow{
+            box-shadow: 2px 0 6px -2px rgba(255, 255, 255, 0.2);
+        }
+        &-fixed-right.@{table-prefix-cls}-fixed-shadow{
+            box-shadow: -2px 0 6px -2px rgba(255, 255, 255, 0.2);
+        }
+        &-fixed-right-header{
+            background-color: @dark-table-thead-bg;
+            border-top: 1px solid @dark-border-color-base;
+            border-bottom: 1px solid @dark-border-color-split;
+        }
+
+        &-fixed-shadow {
+            box-shadow: @dark-shadow-right;
+        }
+
+        &-filter{
+            i{
+                color: @dark-btn-disable-color;
+                &.on{
+                    color: @primary-color;
+                }
+            }
+            &-list{
+                .dark-select-item(@table-prefix-cls, @table-select-item-prefix-cls);
+            }
+            &-footer{
+                border-top: 1px solid @dark-border-color-split;
+            }
+        }
+    }
+}

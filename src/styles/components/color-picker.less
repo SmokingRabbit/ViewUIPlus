@@ -302,3 +302,17 @@
         }
     }
 }
+
+body[theme-mode="dark"] {
+    .@{color-picker-prefix-cls} {
+        &-hue {
+            &-picker {
+                background: @dark-white;
+            }
+        }
+
+        &-confirm {
+            border-top: 1px solid @dark-border-color-split;
+        }
+    }
+}

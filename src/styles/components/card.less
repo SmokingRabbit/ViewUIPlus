@@ -2,7 +2,7 @@
 
 .@{card-prefix-cls}{
     display: block;
-    background: #fff;
+    background: @white;
     border-radius: @border-radius-small;
     font-size: @font-size-base;
     position: relative;
@@ -47,5 +47,37 @@
 
     &-body {
         padding: 16px;
+    }
+}
+
+
+body[theme-mode="dark"] {
+    .@{card-prefix-cls}{
+        background: @dark-component-background;
+
+        &-bordered {
+            border: 1px solid @dark-border-color-base;
+            border-color: @dark-border-color-split;
+        }
+
+        &-shadow{
+            box-shadow: @dark-shadow-card;
+        }
+
+        &:hover {
+            box-shadow: @dark-shadow-base;
+            border-color: @dark-border-color-split ;
+        }
+        &&-dis-hover&-bordered:hover{
+            border-color: @dark-border-color-split;
+        }
+
+        &&-shadow:hover{
+            box-shadow: @dark-shadow-card;
+        }
+
+        &-head {
+            .dark-content-header;
+        }
     }
 }

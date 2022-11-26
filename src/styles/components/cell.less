@@ -72,3 +72,33 @@
     }
 }
 .select-item(@cell-prefix-cls, @cell-prefix-cls);
+
+body[theme-mode="dark"] {
+    .@{cell-prefix-cls} {
+        &-link, &-link:hover, &-link:active{
+            color: #fff;
+        }
+
+        &-label{
+            color: @dark-subsidiary-color;
+        }
+
+        &-selected, &&-selected:hover{
+            background:  ~`colorPalette("@{primary-color}", 1)`;
+        }
+
+        &-footer{
+            color: @dark-text-color;
+        }
+
+        &:focus{
+            background: @dark-background-color-select-hover;
+        }
+
+        &-selected:focus{
+            background: shade(@selected-color, 10%);
+        }
+    }
+
+    .dark-select-item(@cell-prefix-cls, @cell-prefix-cls);
+}

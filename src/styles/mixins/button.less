@@ -51,6 +51,32 @@
     }
 }
 
+.dark-button-variant(@color; @background; @border) {
+    .button-color(@color; @background; @border);
+
+    &:hover
+    //&:focus
+    {
+        .button-color(tint(@color, 20%); tint(@background, 20%); tint(@border, 20%));
+    }
+    &:active,
+    &.active {
+        .button-color(shade(@color, 5%); shade(@background, 5%); shade(@background, 5%));
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            .button-color(@dark-btn-disable-color; @dark-btn-disable-bg; @dark-btn-disable-border);
+        }
+    }
+}
+
 .button-group-base(@btnClassName) {
     position: relative;
     display: inline-block;
@@ -249,6 +275,21 @@
     .active-btn-color(@primary-color);
 }
 
+.dark-btn-default() {
+    .dark-button-variant(@dark-btn-default-color; @dark-btn-default-bg; @dark-btn-default-border);
+
+    &:hover
+    //&:focus
+    {
+        .button-color(tint(@primary-color, 20%); @dark-white; tint(@primary-color, 20%));
+    }
+    &:active,
+    &.active {
+        .button-color(shade(@primary-color, 5%); @dark-white; shade(@primary-color, 5%));
+    }
+    .active-btn-color(@primary-color);
+}
+
 // Primary
 .btn-primary() {
     .button-variant(@btn-primary-color; @btn-primary-bg; @primary-color);
@@ -258,6 +299,18 @@
     &:active,
     &.active {
         color: @btn-primary-color;
+    }
+    .active-btn-color(@primary-color);
+}
+
+.dark-btn-primary() {
+    .dark-button-variant(@dark-text-color; @btn-primary-bg; @primary-color);
+
+    &:hover,
+    //&:focus,
+    &:active,
+    &.active {
+        color: @dark-text-color;
     }
     .active-btn-color(@primary-color);
 }
@@ -295,6 +348,21 @@
     .active-btn-color(@primary-color);
 }
 
+.dark-btn-dashed() {
+    .dark-button-variant(@dark-btn-ghost-color, @dark-btn-ghost-bg, @dark-btn-ghost-border);
+
+    &:hover
+    //&:focus
+    {
+        .button-color(tint(@primary-color, 20%); @dark-btn-ghost-bg; tint(@primary-color, 20%));
+    }
+    &:active,
+    &.active {
+        .button-color(shade(@primary-color, 5%); @dark-btn-ghost-bg; shade(@primary-color, 5%));
+    }
+    .active-btn-color(@primary-color);
+}
+
 // Text
 .btn-text() {
     .button-variant(@btn-ghost-color, transparent, transparent);
@@ -308,7 +376,7 @@
         &:focus,
         &:active,
         &.active {
-            .button-color(@btn-disable-color; @btn-ghost-bg; transparent);
+            .button-color(@btn-disable-color; transparent; transparent);
         }
     }
 
@@ -320,6 +388,34 @@
     &:active,
     &.active {
         .button-color(shade(@primary-color, 5%); @btn-ghost-bg; transparent);
+    }
+    .active-btn-color(@primary-color);
+}
+
+.dark-btn-text() {
+    .dark-button-variant(@dark-btn-ghost-color, transparent, transparent);
+
+    // for disabled
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            .button-color(@dark-btn-disable-color; transparent; transparent);
+        }
+    }
+
+    &:hover
+        //&:focus
+    {
+        .button-color(tint(@primary-color, 20%); @dark-btn-ghost-bg; transparent);
+    }
+    &:active,
+    &.active {
+        .button-color(shade(@primary-color, 5%); @dark-btn-ghost-bg; transparent);
     }
     .active-btn-color(@primary-color);
 }
@@ -339,6 +435,19 @@
     &:active,
     &.active {
         color: @btn-primary-color;
+    }
+
+    .active-btn-color(@color);
+}
+
+.dark-btn-color(@color) {
+    .dark-button-variant(@dark-text-color; @color; @color);
+
+    &:hover,
+        //&:focus,
+    &:active,
+    &.active {
+        color: @dark-text-color;
     }
 
     .active-btn-color(@color);

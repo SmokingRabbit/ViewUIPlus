@@ -55,7 +55,7 @@
         <Tag type="border" closable color="error">标签三</Tag>
         <Tag type="border" closable color="warning">标签四</Tag>
         <br><br>
-        <Tag type="dot" closable color="primary" checkable>标签一</Tag>
+        <Tag type="dot" color="primary">标签一 dot</Tag>
         <Tag type="dot" closable color="success">标签二</Tag>
         <Tag type="dot" closable color="error">标签三</Tag>
         <Tag type="dot" closable color="warning">标签四</Tag>

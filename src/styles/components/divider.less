@@ -107,3 +107,30 @@
         font-size: @font-size-base;
     }
 }
+
+body[theme-mode="dark"] {
+    .@{divider-prefix-cls} {
+        background: @dark-component-background;
+        color: @dark-text-color;
+
+        &-horizontal.@{divider-prefix-cls}-with-text-center,
+        &-horizontal.@{divider-prefix-cls}-with-text-left,
+        &-horizontal.@{divider-prefix-cls}-with-text-right {
+            color: @dark-title-color;
+
+            &:before,
+            &:after {
+                border-top: 1px solid @dark-border-color-split;
+            }
+        }
+
+        &-dashed {
+            background: none;
+            border-top: 1px dashed @dark-border-color-split;
+        }
+
+        &-plain.@{divider-prefix-cls}-with-text, &-plain.@{divider-prefix-cls}-with-text-left, &-plain.@{divider-prefix-cls}-with-text-right {
+            color: @dark-text-color;
+        }
+    }
+}

@@ -24,6 +24,16 @@
     }
 }
 
+.dark-content-header {
+    border-bottom: 1px solid @dark-border-color-split;
+
+    p,
+    &-inner
+    {
+        color: @dark-title-color;
+    }
+}
+
 .content-close(@top: 0, @icon-font-size: 22px) {
     font-size: @font-size-small;
     position: absolute;
@@ -34,5 +44,11 @@
 
     .@{icon-prefix-cls}-ios-close {
         .close-base(@top, @icon-font-size);
+    }
+}
+
+.dark-content-close(@top: 0, @icon-font-size: 22px) {
+    .@{icon-prefix-cls}-ios-close {
+        .dark-close-base(@top, @icon-font-size);
     }
 }

@@ -156,3 +156,74 @@
         overflow: visible;
     }
 }
+
+body[theme-mode="dark"] {
+    .ivu-notifications{
+        &-tabs{
+            .ivu-badge-count{
+                color: @dark-subsidiary-color;
+            }
+        }
+
+        &-extra{
+            border-top: 1px solid @dark-border-color-split;
+        }
+
+        &-tab{
+            &-empty{
+                &-text{
+                    color: @dark-subsidiary-color;
+                }
+            }
+
+            &-clear{
+                border-top: 1px solid @dark-border-color-split;
+                color: @dark-text-color;
+                &:hover{
+                    color: @link-hover-color;
+                }
+            }
+
+            &-loading{
+                &-item{
+                    border-top: 1px solid @dark-border-color-split;
+                    color: @dark-text-color;
+                }
+                &-show, &-all{
+                    color: @dark-btn-disable-color;
+                }
+                &-more{
+                    color: @link-color;
+
+                    &:hover{
+                        color: @link-hover-color;
+                    }
+                }
+            }
+        }
+
+        &-item{
+            border-bottom: 1px solid @dark-border-color-split;
+
+            &:hover{
+                background-color: fade(@primary-color, 10%);
+            }
+
+            &-unread{
+                background-color: #222;
+            }
+
+            &-title{
+                h4{
+                    color: @dark-text-color;
+                }
+            }
+            &-desc{
+                color: @dark-subsidiary-color;
+            }
+            &-time{
+                color: @dark-subsidiary-color;
+            }
+        }
+    }
+}

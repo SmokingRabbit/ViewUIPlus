@@ -75,3 +75,26 @@
         display: none;
     }
 }
+
+body[theme-mode="dark"] {
+    .@{form-prefix-cls} {
+        .@{form-item-prefix-cls}-label {
+            color: @dark-text-color;
+        }
+    }
+
+    .@{form-item-prefix-cls} {
+        &-error-tip{
+            color: @error-color;
+        }
+
+        &-required {
+            .@{form-item-prefix-cls}-label:before {
+                color: @error-color;
+            }
+        }
+        &-error {
+            // todo
+        }
+    }
+}

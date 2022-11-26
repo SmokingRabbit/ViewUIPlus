@@ -221,3 +221,59 @@
         }
     }
 }
+
+
+body[theme-mode="dark"] {
+    .@{input-prefix-cls} {
+        .dark-input;
+
+        &-icon {
+            color: @dark-subsidiary-color;
+        }
+
+        // prefix & suffix
+        &-prefix, &-suffix{
+            i {
+                color: @dark-subsidiary-color;
+            }
+        }
+
+        // search
+        &-search{
+            cursor: pointer;
+            padding: 0 16px !important;
+            background: @primary-color !important;
+            color: #fff !important;
+            border-color: @primary-color !important;
+
+            &:hover{
+                background: tint(@primary-color, 20%) !important;
+                border-color: tint(@primary-color, 20%) !important;
+            }
+            &:active{
+                background: shade(@primary-color, 5%) !important;
+                border-color: shade(@primary-color, 5%) !important;
+            }
+        }
+
+        &-with-search{
+            &:hover{
+                .@{input-prefix-cls} {
+                    border-color: tint(@primary-color, 20%);
+                }
+            }
+        }
+
+        &-word-count{
+            background: @dark-input-bg;
+            color: @dark-subsidiary-color;
+        }
+        &-wrapper-disabled &-word-count{
+            background: @dark-input-disabled-bg;
+        }
+    }
+
+    .@{input-prefix-cls}-group{
+        .dark-input-group(~"@{input-prefix-cls}");
+    }
+}

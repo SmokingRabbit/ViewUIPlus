@@ -68,3 +68,33 @@
         }
     }
 }
+
+body[theme-mode="dark"] {
+    .@{collapse-prefix-cls} {
+        background-color: @dark-background-color-base;
+        border: 1px solid @dark-border-color-base;
+
+        &-simple{
+            background-color: @dark-component-background;
+        }
+
+         > .@{collapse-prefix-cls}-item{
+            border-top: 1px solid @dark-border-color-base;
+
+            > .@{collapse-prefix-cls}-header{
+                color: @dark-text-color;
+            }
+        }
+        .@{collapse-prefix-cls}-item.@{collapse-prefix-cls}-item-active > .@{collapse-prefix-cls}-header{
+            border-bottom: 1px solid @dark-border-color-base;
+        }
+        .@{collapse-prefix-cls}-simple > .@{collapse-prefix-cls}-item.@{collapse-prefix-cls}-item-active > .@{collapse-prefix-cls}-header{
+            border-bottom: 1px solid transparent;
+        }
+
+        &-content{
+            color: @dark-text-color;
+            background-color: @dark-component-background;
+        }
+    }
+}

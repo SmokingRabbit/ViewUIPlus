@@ -8,7 +8,7 @@
             margin-left: 0;
         }
         .ivu-avatar{
-            border: 1px solid #fff;
+            border: 1px solid @white;
         }
         &-excess{
             cursor: auto;
@@ -30,6 +30,16 @@
             margin-left: -12px;
             &:first-child{
                 margin-left: 0;
+            }
+        }
+    }
+}
+
+body[theme-mode="dark"] {
+    .ivu-avatar-list{
+        &-item{
+            .ivu-avatar{
+                border: 1px solid @dark-white;
             }
         }
     }

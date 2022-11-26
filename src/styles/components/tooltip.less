@@ -111,3 +111,42 @@
         }
     }
 }
+
+body[theme-mode="dark"] {
+    .@{tooltip-prefix-cls} {
+        &-popper{
+            .popper(@tooltip-arrow, @tooltip-arrow-width, @tooltip-distance, @dark-popper-background);
+        }
+
+        &-light&-popper{
+            .popper(@tooltip-arrow, @tooltip-arrow-width-light, @tooltip-distance-light, @tooltip-arrow-color);
+
+            &[x-placement^="top"] .@{tooltip-arrow}:after {
+                border-top-color: @dark-popper-background;
+            }
+
+            &[x-placement^="right"] .@{tooltip-arrow}:after {
+                border-top-color: @dark-popper-background;
+            }
+
+            &[x-placement^="bottom"] .@{tooltip-arrow}:after {
+                border-top-color: @dark-popper-background;
+            }
+
+            &[x-placement^="left"] .@{tooltip-arrow}:after {
+                border-top-color: @dark-popper-background;
+            }
+        }
+
+        &-inner{
+            color: @dark-tooltip-color;
+            background-color: @dark-popper-background;
+            box-shadow: @dark-shadow-base;
+        }
+
+        &-light .@{tooltip-prefix-cls}-inner{
+            background-color: @dark-popper-background;
+            color: @dark-text-color;
+        }
+    }
+}

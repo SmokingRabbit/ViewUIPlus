@@ -2,6 +2,10 @@
     <Tabs type="card" :draggable="true" @on-drag-drop="handleDragDrop">
         <TabPane v-for="(tab, index) in tabList" :key="index" :label="tab.label" :name="tab.name">{{ tab.label }}</TabPane>
     </Tabs>
+
+    <Tabs :draggable="true" @on-drag-drop="handleDragDrop">
+        <TabPane v-for="(tab, index) in tabList" :key="index" :label="tab.label" :name="tab.name">{{ tab.label }}</TabPane>
+    </Tabs>
 </template>
 <script>
 export default {

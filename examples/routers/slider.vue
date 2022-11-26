@@ -1,5 +1,5 @@
 <template>
-    <Slider v-model="value11" range :marks="marks"></Slider>
+    <Slider disabled v-model="value11" range :marks="marks"></Slider>
 </template>
 <script>
 import { h } from 'vue';

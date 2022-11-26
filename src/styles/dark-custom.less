@@ -1,0 +1,111 @@
+// Color
+@dark-tooltip-color          : #fff;
+@dark-subsidiary-color       : #bcb8b8;
+@dark-white: #000;
+@dark-black: #fff;
+
+// Base
+@dark-body-background        : #232429;
+@dark-component-background   : #191a23;
+@dark-popper-background      : #34333a;
+@dark-title-color            : darken(@dark-black, 5%);
+@dark-text-color             : darken(@dark-black, 15%);
+@dark-text-color-secondary   : darken(@dark-black, 25%);
+@dark-heading-color          : darken(@dark-black, 6%);
+@dark-heading-color-dark     : fade(@dark-white, 100%);
+
+// Disabled
+@dark-disabled-color: fade(#000, 25%);
+
+// Border color
+@dark-border-color-base      : rgb(69, 72, 71);  // outside
+@dark-border-color-split     : rgba(143, 132, 117, 0.16);  // inside
+
+// Background color
+@dark-background-color-base        : #232429;  // base
+@dark-background-color-select-hover: #000;
+@dark-tooltip-bg                   : rgba(70, 76, 91, .9);
+@dark-head-bg                      : #222;
+@dark-table-thead-bg               : lighten(@dark-component-background, 3%);
+@dark-table-td-stripe-bg           : lighten(@dark-component-background, 8%);
+@dark-table-td-hover-bg            : darken(@dark-component-background, 8%);
+@dark-table-td-highlight-bg        : darken(@dark-component-background, 8%);
+@dark-menu-dark-title              : #515a6e;
+@dark-menu-dark-active-bg          : #363e4f;
+@dark-menu-dark-subsidiary-color   : rgba(255,255,255,.7);
+@dark-menu-dark-group-title-color  : rgba(255,255,255,.36);
+@dark-date-picker-cell-hover-bg    : #2b2b2b;
+
+// Shadow
+@dark-shadow-color           : rgba(255, 255, 255, .025);
+@dark-shadow-base            : @dark-shadow-down;
+@dark-shadow-card            : 0 1px 1px 0 rgba(0,0,0,.1);
+@dark-shadow-up              : 0 -1px 6px @dark-shadow-color;
+@dark-shadow-down            : 0 1px 6px @dark-shadow-color;
+@dark-shadow-left            : -1px 0 6px @dark-shadow-color;
+@dark-shadow-right           : 1px 0 6px @dark-shadow-color;
+
+// Button
+@dark-btn-disable-color      : fade(@dark-black, 30%);;
+@dark-btn-disable-bg         : #434448;
+@dark-btn-disable-border     : @dark-border-color-base;
+
+@dark-btn-default-color      : @dark-text-color;
+@dark-btn-default-bg         : @dark-component-background;
+@dark-btn-default-border     : @dark-border-color-base;
+
+@dark-btn-primary-color      : #fff;
+
+@dark-btn-ghost-color        : @dark-text-color;
+@dark-btn-ghost-bg           : @dark-component-background;
+@dark-btn-ghost-border       : @dark-border-color-base;
+
+// Layout and Grid
+@dark-layout-body-background      : @dark-body-background;
+@dark-layout-header-background    : @dark-component-background;
+@dark-layout-footer-background    : @dark-layout-body-background;
+@dark-layout-sider-background     : @dark-layout-header-background;
+@dark-layout-trigger-color        : @dark-white;
+
+// Legend
+@dark-legend-color           : #999;
+
+// Input
+@dark-input-placeholder-color     : @dark-btn-disable-color;
+@dark-input-color                 : @dark-text-color;
+@dark-input-border-color          : @dark-border-color-base;
+@dark-input-bg                    : @dark-component-background;
+@dark-input-group-bg              : #2b2b2b;
+
+@dark-input-disabled-bg           : #313233;
+
+// Slider
+@dark-slider-disabled-color     : #434343;
+
+// Avatar
+@dark-avatar-bg: #555b61;
+@dark-avatar-color: #e4e7f5;
+
+
+// List
+@dark-list-header-background: transparent;
+@dark-list-footer-background: transparent;
+
+// Skeleton
+@dark-skeleton-base-color: rgba(255, 255, 255, 0.08);
+@dark-skeleton-to-color: shade(@dark-skeleton-base-color, 5%);
+
+// Image
+@dark-image-preview-operations-background: rgba(255, 255, 255, 0.2);
+@dark-image-preview-operations-disabled-color: #411324;
+
+// Split
+@dark-trigger-background: @dark-body-background;
+@dark-trigger-bar-background: darken(@dark-black, 40%);
+
+// Steps
+@dark-steps-wait-icon-color: #ddd;
+@dark-steps-wait-title-color: @dark-text-color-secondary;
+@dark-steps-title-color: @dark-text-color;
+@dark-steps-wait-description-color: @dark-steps-wait-title-color;
+@dark-steps-wait-tail-color: @dark-border-color-split;

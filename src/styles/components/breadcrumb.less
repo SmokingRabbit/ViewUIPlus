@@ -32,3 +32,21 @@
         }
     }
 }
+
+body[theme-mode="dark"] {
+    .@{breadcrumb-prefix-cls} {
+        color: #999;
+
+        a {
+            color: @dark-text-color;
+        }
+
+        & > span:last-child {
+            color: @dark-text-color;
+        }
+
+        &-item-separator {
+            color: @dark-border-color-base;
+        }
+    }
+}

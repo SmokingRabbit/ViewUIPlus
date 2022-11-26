@@ -11,13 +11,13 @@
     }
 
     &-inner {
-        background-color: rgba(0,0,0,.6);
+        background-color: fade(@black, 60%);
         border-radius: 2px;
-        box-shadow: 0 1px 3px rgba(0,0,0,.2);
+        box-shadow: 0 1px 3px fade(@black, 20%);
         transition: all @transition-time @ease-in-out;
 
         &:hover {
-            background-color: rgba(0,0,0,.7);
+            background-color: fade(@black, 70%);
         }
     }
 
@@ -25,5 +25,22 @@
         color: #fff;
         font-size: 24px;
         padding: 8px 12px;
+    }
+}
+
+body[theme-mode="dark"] {
+    .@{backtop-prefix-cls} {
+        &-inner {
+            background-color: fade(@dark-black, 60%);
+            box-shadow: 0 1px 3px fade(@dark-black, 20%);
+
+            &:hover {
+                background-color: fade(@dark-black, 70%);
+            }
+        }
+
+        i{
+            color: #fff;
+        }
     }
 }

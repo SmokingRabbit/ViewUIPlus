@@ -187,3 +187,24 @@
         }
     }
 }
+
+body[theme-mode="dark"] {
+    .ivu-page-header{
+        background: @dark-body-background;
+        border-bottom: @border-width-base @border-style-base @dark-border-color-split;
+
+        &-back{
+            &:hover{
+                color: @primary-color;
+            }
+
+        }
+        &-main &-back{
+            display: none;
+        }
+
+        &-title{
+            color: @dark-title-color;
+        }
+    }
+}

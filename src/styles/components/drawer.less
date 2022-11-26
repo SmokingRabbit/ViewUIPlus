@@ -176,3 +176,16 @@
         }
     }
 }
+
+body[theme-mode="dark"] {
+    .@{drawer-prefix-cls} {
+        &-header {
+            .dark-content-header;
+        }
+
+        &-content {
+            background-color: @dark-component-background;
+            box-shadow: 0 4px 12px rgba(0,0,0,.15);
+        }
+    }
+}

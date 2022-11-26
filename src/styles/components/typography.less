@@ -318,3 +318,38 @@
     //    background: #fff;
     //}
 }
+
+body[theme-mode="dark"] {
+    .@{typography-prefix-cls} {
+        color: @dark-text-color;
+
+        &&-secondary {
+            color: @dark-text-color-secondary;
+        }
+
+        &&-success {
+            color: @success-color;
+        }
+
+        &&-warning {
+            color: @warning-color;
+        }
+
+        &&-danger {
+            color: @error-color;
+
+            a&:active,
+            a&:focus {
+                color: @error-active-color;
+            }
+
+            a&:hover {
+                color: @error-hover-color;
+            }
+        }
+
+        &&-disabled {
+            color: @dark-disabled-color;
+        }
+    }
+}

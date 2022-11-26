@@ -199,3 +199,34 @@
         }
     }
 }
+
+body[theme-mode="dark"] {
+    .@{modal-prefix-cls} {
+        &-content {
+            background-color: @dark-component-background;
+        }
+
+        &-header {
+            .dark-content-header;
+        }
+
+        &-close {
+            .dark-content-close(1px, 31px);
+        }
+
+        &-footer {
+            border-top: 1px solid @dark-border-color-split;
+        }
+    }
+    .@{confirm-prefix-cls} {
+        &-head {
+            &-title {
+                color: @dark-title-color;
+            }
+        }
+
+        &-body{
+            color: @dark-text-color;
+        }
+    }
+}

@@ -1,9 +1,4 @@
 @steps-prefix-cls: ~"@{css-prefix}steps";
-@steps-wait-icon-color: #ccc;
-@steps-wait-title-color: #999;
-@steps-wait-description-color: @steps-wait-title-color;
-@steps-wait-tail-color: @border-color-split;
-@steps-title-color: #666;
 
 .@{steps-prefix-cls} {
     display: -webkit-box;
@@ -363,5 +358,131 @@
     .@{steps-prefix-cls}-item:not(:first-child) .@{steps-prefix-cls}-head {
         padding-left: 10px;
         margin-left: -10px;
+    }
+}
+
+body[theme-mode="dark"] {
+    .@{steps-prefix-cls} {
+        &-item{
+            &.@{steps-prefix-cls}-status-wait{
+                .@{steps-prefix-cls}-head-inner {
+                    background-color: @dark-component-background;
+                    > .@{steps-prefix-cls}-icon, span {
+                        color: @dark-steps-wait-icon-color;
+                    }
+                }
+                .@{steps-prefix-cls}-title {
+                    color: @dark-steps-wait-title-color;
+                }
+                .@{steps-prefix-cls}-content {
+                    color: @dark-steps-wait-description-color;
+                }
+                .@{steps-prefix-cls}-tail > i {
+                    background-color: @dark-steps-wait-tail-color;
+                }
+            }
+            &.@{steps-prefix-cls}-status-process {
+                .@{steps-prefix-cls}-head-inner {
+                    border-color: @primary-color;
+                    background-color: @primary-color;
+                    > .@{steps-prefix-cls}-icon, span {
+                        color: @dark-component-background;
+                    }
+                }
+                .@{steps-prefix-cls}-title {
+                    color: @dark-steps-title-color;
+                }
+                .@{steps-prefix-cls}-content {
+                    color: @dark-steps-title-color;
+                }
+                .@{steps-prefix-cls}-tail > i {
+                    background-color: @dark-border-color-split;
+                }
+            }
+            &.@{steps-prefix-cls}-status-finish {
+                .@{steps-prefix-cls}-head-inner {
+                    background-color: @dark-component-background;
+                    border-color: @primary-color;
+                    > .@{steps-prefix-cls}-icon, span {
+                        color: @primary-color;
+                    }
+                }
+                .@{steps-prefix-cls}-tail > i:after {
+                    width: 100%;
+                    background: @primary-color;
+                    transition: all @transition-time @ease-in-out;
+                    opacity: 1;
+                }
+                .@{steps-prefix-cls}-title {
+                    color: @dark-steps-wait-title-color;
+                }
+                .@{steps-prefix-cls}-content {
+                    color: @dark-steps-wait-description-color;
+                }
+            }
+
+            &.@{steps-prefix-cls}-status-error {
+                .@{steps-prefix-cls}-head-inner {
+                    background-color: @dark-component-background;
+                    border-color: @error-color;
+                    > .@{steps-prefix-cls}-icon {
+                        color: @error-color;
+                    }
+                }
+                .@{steps-prefix-cls}-title {
+                    color: @error-color;
+                }
+                .@{steps-prefix-cls}-content {
+                    color: @error-color;
+                }
+                .@{steps-prefix-cls}-tail > i {
+                    background-color: @dark-border-color-split;
+                }
+            }
+
+            &.@{steps-prefix-cls}-next-error {
+                .@{steps-prefix-cls}-tail > i,
+                .@{steps-prefix-cls}-tail > i:after {
+                    background-color: @error-color;
+                }
+            }
+        }
+
+        .@{steps-prefix-cls}-head {
+            background: @dark-component-background;
+        }
+
+        .@{steps-prefix-cls}-head-inner {
+            border: 1px solid @dark-steps-wait-icon-color;
+        }
+
+        .@{steps-prefix-cls}-title {
+            color: @dark-text-color;
+            background: @dark-component-background;
+
+            > a:first-child:last-child {
+                color: @dark-text-color;
+            }
+        }
+        .@{steps-prefix-cls}-content {
+            color: @dark-text-color-secondary;
+        }
+        .@{steps-prefix-cls}-tail {
+            > i {
+                background: @border-color-split;
+                &:after {
+                    background: @border-color-split;
+                }
+            }
+        }
+
+        &.@{steps-prefix-cls}-small {
+            .@{steps-prefix-cls}-title {
+                color: @dark-text-color;
+            }
+            .@{steps-prefix-cls}-content {
+                color: @dark-text-color-secondary;
+            }
+        }
     }
 }

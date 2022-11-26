@@ -72,3 +72,24 @@
         padding-bottom: 6px;
     }
 }
+
+body[theme-mode="dark"] {
+    .@{anchor-prefix}{
+        &{
+            &-ink {
+                &:before {
+                    background-color: @dark-border-color-split;
+                }
+                &-ball {
+                    background-color: @dark-body-background;
+                }
+            }
+        }
+
+        &-link {
+            &-title {
+                color: @dark-text-color;
+            }
+        }
+    }
+}

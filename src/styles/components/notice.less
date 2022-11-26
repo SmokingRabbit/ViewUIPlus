@@ -114,3 +114,27 @@
         position: relative;
     }
 }
+
+body[theme-mode="dark"] {
+    .@{notice-prefix-cls} {
+        &-notice {
+            background: @dark-popper-background;
+            box-shadow: @dark-shadow-base;
+
+            &-close {
+                color: #ddd;
+
+                i{
+                    .dark-close-base(-3px);
+                }
+            }
+        }
+
+        &-title {
+            color: @dark-title-color;
+        }
+        &-desc {
+            color: @dark-text-color;
+        }
+    }
+}

@@ -189,3 +189,45 @@
         transform: rotate(360deg);
     }
 }
+
+body[theme-mode="dark"] {
+    .@{switch-prefix-cls} {
+        border: 1px solid @dark-white;
+        background-color: @dark-white;
+
+        &-inner {
+            color: #f5f5f5;
+        }
+
+        &:after {
+            background-color: @dark-component-background;
+        }
+
+        &-checked {
+            border-color: @primary-color;
+            background-color: @primary-color;
+        }
+
+        &-disabled {
+            &:after {
+                background: lighten(@dark-white, 10%);
+                cursor: not-allowed;
+            }
+
+            .@{switch-prefix-cls}-inner {
+                color: darken(@dark-white, 10%);
+            }
+        }
+
+        &-disabled&-checked{
+            &:after {
+                background: lighten(@dark-white, 10%);;
+            }
+
+            .@{switch-prefix-cls}-inner {
+                color: darken(@dark-white, 10%);;
+            }
+        }
+
+    }
+}

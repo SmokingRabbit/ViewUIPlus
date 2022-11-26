@@ -111,3 +111,32 @@
         color: @image-preview-operations-disabled-color;
     }
 }
+
+body[theme-mode="dark"] {
+    .@{image-preview-prefix-cls} {
+        &-fail {
+            color: @dark-black;
+        }
+        &-operations {
+            background: @dark-image-preview-operations-background;
+            transform: translate(-50%);
+            &-item {
+                &:hover {
+                    opacity: @image-preview-operations-hover;
+                }
+            }
+            &-wait {
+                cursor: wait;
+            }
+        }
+        &-arrow-left,
+        &-arrow-right,
+        &-arrow-close {
+            color: @dark-black;
+            background: @dark-image-preview-operations-background;
+        }
+        &-arrow-disabled {
+            color: @dark-image-preview-operations-disabled-color;
+        }
+    }
+}

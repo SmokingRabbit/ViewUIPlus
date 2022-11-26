@@ -46,3 +46,24 @@
         }
     }
 }
+
+body[theme-mode="dark"] {
+    .ivu-grid{
+        &-border{
+            .ivu-grid-item{
+                box-shadow: 1px 0 0 0 @dark-border-color-split, 0 1px 0 0 @dark-border-color-split,
+                1px 1px 0 0 @dark-border-color-split, 1px 0 0 0 @dark-border-color-split inset,
+                0 1px 0 0 @dark-border-color-split inset;
+            }
+        }
+
+        &-hover{
+            .ivu-grid-item{
+                &:hover {
+                    z-index: 1;
+                    box-shadow: @dark-shadow-base;
+                }
+            }
+        }
+    }
+}
