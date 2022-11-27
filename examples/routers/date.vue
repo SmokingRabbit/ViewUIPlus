@@ -251,7 +251,9 @@
     <div style="width: 500px;margin: 100px;">
         <p><input type="text"></p>
 
-        <DatePicker type="month" show-week-numbers placeholder="Select date" style="width: 200px"></DatePicker>
+        <Empty />
+
+        <DatePicker type="month" :options="{ disabledDate: d => +d < Date.now() - 1000 * 60 * 60 * 24 }" show-week-numbers placeholder="Select date" style="width: 200px"></DatePicker>
         <DatePicker type="year" show-week-numbers placeholder="Select date" style="width: 200px"></DatePicker>
 
         <DatePicker type="date" transfer show-week-numbers placeholder="Select date" style="width: 400px"></DatePicker>

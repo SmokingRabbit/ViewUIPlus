@@ -47,7 +47,11 @@
                             @click="handleSelectItem(index)" v-html="item.display"></li>
                     </ul>
                 </div>
-                <ul v-show="(filterable && query !== '' && !querySelections.length) || !data.length" :class="[prefixCls + '-not-found-tip']"><li>{{ localeNotFoundText }}</li></ul>
+                <ul v-show="(filterable && query !== '' && !querySelections.length) || !data.length" :class="[prefixCls + '-not-found-tip']">
+                    <li>
+                        <Empty :description="localeNotFoundText" />
+                    </li>
+                </ul>
             </div>
         </Drop>
     </div>
@@ -57,6 +61,7 @@
     import iInput from '../input/input.vue';
     import Drop from '../select/dropdown.vue';
     import Icon from '../icon/icon.vue';
+    import Empty from '../empty/empty.vue';
     import Caspanel from './caspanel.vue';
     import clickOutside from '../../directives/clickoutside';
     import { oneOf, deepCopy } from '../../utils/assist';
@@ -70,7 +75,7 @@
     export default {
         name: 'Cascader',
         mixins: [ Locale, mixinsForm, globalConfig ],
-        components: { iInput, Drop, Icon, Caspanel },
+        components: { iInput, Drop, Icon, Caspanel, Empty },
         directives: { clickOutside },
         emits: ['on-change', 'on-visible-change', 'update:modelValue'],
         provide () {

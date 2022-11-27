@@ -41,8 +41,8 @@
                     <tbody>
                         <tr>
                             <td :style="{'height':bodyStyle.height,'width':`${headerWidth}px`}">
-                                <span v-html="localeNoDataText" v-if="!data || data.length === 0"></span>
-                                <span v-html="localeNoFilteredDataText" v-else></span>
+                                <Empty v-if="!data || data.length === 0" :description="localeNoDataText"/>
+                                <Empty v-else :description="localeNoFilteredDataText"/>
                             </td>
                         </tr>
                     </tbody>
@@ -146,6 +146,7 @@
     import Dropdown from '../dropdown/dropdown.vue';
     import DropdownMenu from '../dropdown/dropdown-menu.vue';
     import Spin from '../spin/spin.vue';
+    import Empty from '../empty/empty.vue';
     import { oneOf, getStyle, deepCopy, getScrollBarSize } from '../../utils/assist';
     import { on, off } from '../../utils/dom';
     import random from '../../utils/random_str';
@@ -163,7 +164,7 @@
     export default {
         name: 'Table',
         mixins: [ Locale ],
-        components: { tableHead, tableBody, tableSummary, Spin, Dropdown, DropdownMenu },
+        components: { tableHead, tableBody, tableSummary, Spin, Dropdown, DropdownMenu, Empty },
         emits: ['on-current-change', 'on-row-click', 'on-row-dblclick', 'on-contextmenu', 'on-select', 'on-select-cancel', 'on-selection-change', 'on-expand', 'on-expand-tree', 'on-select-all', 'on-select-all-cancel', 'on-sort-change', 'on-filter-change', 'on-drag-drop', 'on-cell-click', 'on-column-width-resize'],
         provide () {
             return {

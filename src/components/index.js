@@ -41,6 +41,7 @@ export { default as DropdownItem } from './dropdown-item';
 export { default as DropdownMenu } from './dropdown-menu';
 export { default as Ellipsis } from './ellipsis';
 export { default as Email } from './email';
+export { default as Empty } from './empty';
 export { default as Exception } from './exception';
 export { default as Footer } from './footer';
 export { default as FooterToolbar } from './footer-toolbar';

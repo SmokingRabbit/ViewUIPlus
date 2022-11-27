@@ -1,6 +1,7 @@
 <template>
     <div style="margin: 200px">
         <Divider>TreeTable</Divider>
+        <Table border :columns="columns4" :data="[]" show-summary :height="200"></Table>
         <Table
             border
             highlight-row

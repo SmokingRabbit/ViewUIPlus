@@ -66,7 +66,11 @@
             :transfer="transfer"
             transition-name="transition-drop"
         >
-            <ul v-show="showNotFoundLabel && !allowCreate" :class="[prefixCls + '-not-found']"><li>{{ localeNotFoundText }}</li></ul>
+            <ul v-show="showNotFoundLabel && !allowCreate" :class="[prefixCls + '-not-found']">
+                <li>
+                    <Empty :description="localeNotFoundText" />
+                </li>
+            </ul>
 
             <ul
                 v-if="(!remote) || (remote && !loading)"
@@ -96,6 +100,7 @@
     import Drop from './dropdown.vue';
     import Icon from '../icon';
     import SelectHead from './select-head.vue';
+    import Empty from '../empty/empty.vue';
 
     import { directive as clickOutside } from '../../directives/v-click-outside-x';
     import { oneOf } from '../../utils/assist';
@@ -120,7 +125,7 @@
     export default {
         name: 'iSelect',
         mixins: [ Locale, mixinsForm ],
-        components: { Drop, SelectHead, Icon },
+        components: { Drop, SelectHead, Icon, Empty },
         directives: { clickOutside },
         emits: ['on-set-default-options', 'on-clear', 'on-clickoutside', 'on-select', 'on-create', 'on-change', 'on-query-change', 'on-open-change', 'update:modelValue'],
         provide () {
