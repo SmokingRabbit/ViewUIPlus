@@ -409,22 +409,22 @@ body[theme-mode="dark"] {
         &-btn-pulse{
             background-color: fade(@primary-color, 60%) !important;
         }
+    }
 
-        span.@{date-picker-prefix-cls}-cells-cell-week-label,
-        span.@{date-picker-prefix-cls}-cells-cell-week-label:hover,
-        span.@{date-picker-prefix-cls}-cells-cell-disabled,
-        span.@{date-picker-prefix-cls}-cells-cell-disabled:hover {
-            color: @dark-btn-disable-color;
+    span.@{date-picker-prefix-cls}-cells-cell-week-label,
+    span.@{date-picker-prefix-cls}-cells-cell-week-label:hover,
+    span.@{date-picker-prefix-cls}-cells-cell-disabled,
+    span.@{date-picker-prefix-cls}-cells-cell-disabled:hover {
+        color: @dark-btn-disable-color;
 
-            em{
-                color: inherit;
-                background: inherit;
-            }
+        em{
+            color: inherit;
+            background: inherit;
         }
-        span.@{date-picker-prefix-cls}-cells-cell-disabled,
-        span.@{date-picker-prefix-cls}-cells-cell-disabled:hover{
-            background: @dark-btn-disable-bg;
-        }
+    }
+    span.@{date-picker-prefix-cls}-cells-cell-disabled,
+    span.@{date-picker-prefix-cls}-cells-cell-disabled:hover{
+        background: @dark-btn-disable-bg;
     }
 
     .@{picker-prefix-cls} {

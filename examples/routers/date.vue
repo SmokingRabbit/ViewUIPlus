@@ -253,6 +253,8 @@
 
         <Empty />
 
+        <DatePicker :options="{ disabledDate: d => +d < Date.now() - 1000 * 60 * 60 * 24 }"  style="width: 200px"></DatePicker>
+
         <DatePicker type="month" :options="{ disabledDate: d => +d < Date.now() - 1000 * 60 * 60 * 24 }" show-week-numbers placeholder="Select date" style="width: 200px"></DatePicker>
         <DatePicker type="year" show-week-numbers placeholder="Select date" style="width: 200px"></DatePicker>
 
