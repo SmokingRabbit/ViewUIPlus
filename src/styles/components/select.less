@@ -445,4 +445,12 @@ body[theme-mode="dark"] {
             color: @dark-legend-color;
         }
     }
+
+    .@{form-item-prefix-cls}-error{
+        .@{select-prefix-cls}{
+            &-selection{
+                border: 1px solid @error-color;
+            }
+        }
+    }
 }

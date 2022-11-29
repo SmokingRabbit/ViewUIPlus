@@ -138,13 +138,17 @@
 }
 
 .input-error() {
-    border: 1px solid @error-color;
+    border: 1px solid @error-color !important;
     &:hover {
         .hover-error;
     }
     &:focus {
         .active-error;
     }
+}
+
+.dark-input-error() {
+    border: 1px solid @error-color !important;
 }
 
 .input-group(@inputClass) {
@@ -323,6 +327,27 @@
     &-append
     {
         background-color: #fff;
+        border: 1px solid @error-color;
+        .@{css-prefix}select {
+            &-selection {
+                background-color: inherit;
+                border: 1px solid transparent;
+            }
+        }
+    }
+    &-prepend {
+        border-right: 0;
+    }
+    &-append {
+        border-left: 0;
+    }
+}
+
+.dark-input-group-error{
+    &-prepend,
+    &-append
+    {
+        background-color: @dark-input-group-bg;
         border: 1px solid @error-color;
         .@{css-prefix}select {
             &-selection {

@@ -276,4 +276,24 @@ body[theme-mode="dark"] {
     .@{input-prefix-cls}-group{
         .dark-input-group(~"@{input-prefix-cls}");
     }
+
+    .@{form-item-prefix-cls}-error{
+        .@{input-prefix-cls}{
+            .dark-input-error;
+            &-icon{
+                color: @error-color;
+            }
+        }
+        .@{input-prefix-cls}-group{
+            .input-group-error;
+        }
+        .@{transfer-prefix-cls} {
+            .@{input-prefix-cls} {
+                .dark-input;
+                &-icon{
+                    color: @subsidiary-color;
+                }
+            }
+        }
+    }
 }
