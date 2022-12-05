@@ -2,7 +2,7 @@
 @time-picker-cells-width-base: 56px;
 @time-picker-cells-width-with-date-base: 72px;
 @time-picker-cells-width: @time-picker-cells-width-base * 2;
-@time-picker-cells-width-with-seconds: @time-picker-cells-width-base *3;
+@time-picker-cells-width-with-seconds: @time-picker-cells-width-base * 3;
 @time-picker-cells-width-with-date: @time-picker-cells-width-with-date-base * 2;
 @time-picker-cells-width-with-date-with-seconds: @time-picker-cells-width-with-date-base * 3;
 
@@ -141,7 +141,7 @@
                 &-with-seconds{
                     min-width: @time-picker-cells-width-with-date-with-seconds;
                     .@{time-picker-prefix-cls}-cells-list{
-                        width: @time-picker-cells-width-with-date-with-seconds / 3;
+                        width: (@time-picker-cells-width-with-date-with-seconds / 3);
                         ul{
                             li{
                                 padding: 0 0 0 28px;
@@ -150,7 +150,7 @@
                     }
                 }
                 &-list {
-                    width: @time-picker-cells-width-with-date-with-seconds / 2;
+                    width: (@time-picker-cells-width-with-date-with-seconds / 2);
                     max-height: 216px;
                     &:first-child{
                         border-radius: 0;
